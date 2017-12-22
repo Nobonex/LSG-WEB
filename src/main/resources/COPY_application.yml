@@ -1,28 +1,28 @@
-#spring:
-#  mail:
-#    host: smtp.gmail.com
-#    port: 587
-#    username: handynamicroom@gmail.com
-#    password: HANDYNAMICROOM6!@#
-#    properties.mail.smtp:
-#          auth: true
-#          starttls.enable: true
-#          starttls.required: true
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/HanDynamicRoom?useSSL=false
-#    username: root
-#    password: handynamicroom
-#    platform: mysql
-#    initialize: false
-#  jpa:
-#    database-platform: org.hibernate.dialect.MySQLDialect
-#    hibernate:
-#      ddl-auto: validate
-#      naming:
-#        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
-#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-#server:
-#  port: 8080
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: YOUR_USERNAME
+    password: YOUR_PASSWORD
+    properties.mail.smtp:
+          auth: true
+          starttls.enable: true
+          starttls.required: true
+  datasource:
+    url: jdbc:mysql://YOUR_HOST/YOUR_DATABASE
+    username: YOUR_USERNAME
+    password: YOUR_PASSWORD
+    platform: mysql
+    initialize: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: validate
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+server:
+  port: 8080
 
 ---
 
@@ -44,6 +44,7 @@ spring:
 ---
 
 spring:
+  profiles: h2
   datasource:
     url: jdbc:h2:mem:example-app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     platform: h2
